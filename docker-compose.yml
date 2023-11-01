@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nodejs:
+    build: .
+    ports:
+      - "3000:3000" # Map your Node.js app's port to the host machine
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27018:27017" # Map MongoDB port to the host machine
